@@ -70,6 +70,7 @@ function init() {
   )
   screen.position.set(0,0,0);
   // scene.add(screen);
+  
   // 椅子
   const chair = new THREE.Group();
   {
@@ -109,7 +110,8 @@ function init() {
 
   // レンダラーの配置
   document.getElementById("output1").appendChild(cssRenderer.domElement);
-  
+  // cssRenderer.domElement.appendChild(renderer.domElement);
+
   // シート選択のための設定
   const raycaster = new THREE.Raycaster();
   const mouse = new THREE.Vector2();
@@ -125,13 +127,14 @@ function init() {
 
   // Windowサイズの変更処理
   window.addEventListener("resize", ()=>{
-    camera1.updateProjectionMatrix();
     cssRenderer.setSize( window.innerWidth, window.innerHeight );
+    // renderer.setSize( window.innerWidth, window.innerHeight );
   }, false);
 
   // 描画処理
   function update(time) {
     cssRenderer.render(scene, camera1);
+    // renderer.render(scene, camera1);
     requestAnimationFrame(update);
   }
 

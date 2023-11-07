@@ -16,6 +16,7 @@ function init() {
   const params = {
     fov: 60, // 視野角
     axes: false, // 座標軸の標示
+    wireframe: false, // ワイヤフレームの表示
     cameraH: 6, // カメラの高さ
     dpyW: 6.2, // ディスプレイの幅
     dpyH: 3.6, // ディスプレイの高さ
@@ -52,12 +53,28 @@ function init() {
   const renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerWidth, window.innerHeight );
   renderer.setClearColor( 0x406080 );
+  // renderer.domElement.style.position = "absolute";
+  // renderer.domElement.style.top = 0;
   document.getElementById("WebGL-output").appendChild(renderer.domElement);
 
   // CSSRenderer の追加
+  // const cssRenderer = new CSS3DRenderer();
+  // cssRenderer.setSize(window.innerWidth, window.innerHeight);
+  // cssRenderer.domElement.style.position = "absolute";
+  // cssRenderer.domElement.style.top = 0;
+  // document.getElementById("WebGL-output").appendChild(cssRenderer.domElement);
 
   // CSSRenderer で表示する iframe要素を作る
-
+  // const iframe = document.createElement("iframe");
+  // iframe.style.width = "640px";
+  // iframe.style.height = "360px";
+  // iframe.style.border = "0px";
+  // iframe.src = "https://feng.takushoku-u.ac.jp/course/cs/";
+  // const webPage = new CSS3DObject(iframe);
+  // webPage.scale.x *= (params.dpyW - params.dpyE)/640;
+  // webPage.scale.y *= (params.dpyH - params.dpyE)/360;
+  // webPage.position.set(0,0,params.dpyD/2);
+  // scene.add(webPage);
 
   // カメラ制御
   const orbitControls = new OrbitControls(camera, renderer.domElement);
@@ -80,11 +97,16 @@ function init() {
       
       
       
-    )
+    );
     
+
     
+
+
+
     //display.add(standBack);
     // スタンド台
+    const theta = Math.PI/8;
     const standBase = new THREE.Mesh(
       
       
@@ -95,13 +117,14 @@ function init() {
   }
   scene.add(display);
 
-  // 表示部分 (背景を白にするため)
-
   // デスク
 
   // 描画関数の定義
   function render() {
     axes.visible = params.axes;
+    display.children.forEach((child) => {
+      child.material.wireframe = params.wireframe;
+    });
     orbitControls.update();
     // WebGL レンダラ
     renderer.render(scene, camera);
@@ -112,11 +135,16 @@ function init() {
 
   // サイズ変更
   window.addEventListener("resize", () => {
+    // camera.aspect = window.innerWidth / window.innerHeight;
+    // camera.updateProjectionMatrix();
+    // renderer.setSize(window.innerWidth, window.innerHeight);
+    // cssRenderer.setSize(window.innerWidth, window.innerHeight);
   });
   
   // GUIコントローラ
   const gui = new GUI();
   gui.add(params, "axes");
+  gui.add(params, "wireframe")
   
   // 最初の描画
   render();
