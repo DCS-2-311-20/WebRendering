@@ -1,6 +1,6 @@
 //
 // 応用プログラミング 第6回 課題1 (ap0601)
-// G384002023 拓殖太郎
+// G484002024 拓殖太郎
 //
 "use strict"; // 厳格モード
 
@@ -78,12 +78,6 @@ function init() {
   iframe.style.border = "0px";
   iframe.src = "https://feng.takushoku-u.ac.jp/course/cs/";
 
-
-
-
-
-
-
   // カメラ制御
   const orbitControls = new OrbitControls(camera, renderer.domElement);
   orbitControls.enableDumping = true;
@@ -100,26 +94,14 @@ function init() {
     display.add(face);
     // スタンド台
     const standBase = new THREE.Mesh(
-      
-      
     )
     
     //display.add(standBase);    
     // スタンド脚
     const theta = Math.PI/8;
     const standBack = new THREE.Mesh(
-      
-      
-      
-      
-      
     );
     
-
-    
-
-
-
     //display.add(standBack);
 
     // 影の設定
@@ -144,12 +126,6 @@ function init() {
 
   // サイズ変更
   window.addEventListener("resize", () => {
-
-
-
-
-
-
   });
   
   // GUIコントローラ

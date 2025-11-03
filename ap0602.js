@@ -1,6 +1,6 @@
 //
 // 応用プログラミング 第6回 課題2 (ap0602.js)
-//  G38400-2023 拓殖太郎
+//  G48400-2024 拓殖太郎
 // $Id$
 //
 "use strict"; // 厳格モード
@@ -79,6 +79,7 @@ function init() {
   // 椅子
   const chair = new THREE.Group();
   {
+    const chairMaterial = new THREE.MeshLambertMaterial({color: 0x802000});
 
   }
   // 座席の生成
@@ -132,6 +133,7 @@ function init() {
 
   // Windowサイズの変更処理
   window.addEventListener("resize", ()=>{
+    camera1.updateProjectionMatrix();
     // cssRenderer.setSize( window.innerWidth, window.innerHeight-nameHeight );
     // renderer.setSize( window.innerWidth, window.innerHeight-nameHeight );
   }, false);
