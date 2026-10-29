@@ -1,0 +1,26 @@
+{
+  "name": "webrendering",
+  "version": "1.0.0",
+  "description": "応用プログラミング 第6回 課題",
+  "homepage": "https://github.com/DCS-2-311-20/WebRendering#readme",
+  "bugs": {
+    "url": "https://github.com/DCS-2-311-20/WebRendering/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DCS-2-311-20/WebRendering.git"
+  },
+  "license": "ISC",
+  "author": "Takashi Minohara",
+  "type": "commonjs",
+  "main": "ap0601.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "lil-gui": "^0.21.0",
+    "three": "^0.186.1",
+    "vite": "^8.3.5"
+  }
+}
