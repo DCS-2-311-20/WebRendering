@@ -8,13 +8,13 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons";
 import { CSS3DObject, CSS3DRenderer } from "three/addons";
-import GUI from "ili-gui";
+import GUI from "lil-gui";
 
 // ３Ｄページ作成関数の定義
 function init() {
   const params = {
     fov: 60, // 視野角
-    axes: false, // 座標軸の標示
+    axes: true, // 座標軸の標示
     cameraH: 6, // カメラの高さ
   };
 
@@ -41,20 +41,20 @@ function init() {
   const renderer = new THREE.WebGLRenderer();
   renderer.setSize(canvasWidth, canvasHeight);
   renderer.setClearColor(0x406080);
-  // renderer.domElement.style.position = "absolute";
-  // renderer.domElement.style.top = nameHeight;
+  // renderer.domElement.style.position = 
+  // renderer.domElement.style.top = 
   document.getElementById("canvas").appendChild(renderer.domElement);
 
   // CSSRenderer の追加
-  // const cssRenderer = new CSS3DRenderer();
-  // cssRenderer.setSize(canvasWidth, canvasHeight);
-  // cssRenderer.domElement.style.position = "absolute";
-  // cssRenderer.domElement.style.top = nameHeight;
-  // document.getElementById("canvas").appendChild(cssRenderer.domElement);
+  // const cssRenderer = 
+  // cssRenderer.setSize();
+  // cssRenderer.domElement.style.position =
+  // cssRenderer.domElement.style.top = 
+  // document.getElementById("canvas").
 
   // カメラの設定
   const camera = new THREE.PerspectiveCamera(
-    params.fov, window.innerWidth/window.innerHeight, 0.01, 100);
+    params.fov, canvasWidth/canvasHeight, 0.01, 100);
   camera.position.set(0,0,params.cameraH);
   camera.lookAt(0,0,0);
   

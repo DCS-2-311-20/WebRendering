@@ -107,6 +107,8 @@ function init() {
   iframe.src = "https://www.youtube.com/embed?version=3"
       +"&mute=1&autoplay=1&controls=0"
       +"&loop=1&playlist=w23RIKTYF28,-9pMuSNlN6A";
+  //iframe.src ="https://www.youtube.com/embed/6TeZjzc_WWw?si=oMY0NRd4c9IH60u4"
+  //      +"&mute=1&autoplay=1&controls=0&loop=1&cc_load_policy=0";
   
   // CSSオブジェクトの生成
   const cssObject = new CSS3DObject(iframe);
@@ -128,6 +130,10 @@ function init() {
     
     // 全ての座席について
  
+      // マウスが指しているか確認
+
+        // 指していたら．その場所にアバターを移動
+
   }
   window.addEventListener("mousedown", onMouseDown, false);
 
