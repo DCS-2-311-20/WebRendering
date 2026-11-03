@@ -104,11 +104,7 @@ function init() {
   iframe.style.width = "640px";
   iframe.style.height = "360px";
   iframe.style.border = "0px";
-  iframe.src = "https://www.youtube.com/embed?version=3"
-      +"&mute=1&autoplay=1&controls=0"
-      +"&loop=1&playlist=w23RIKTYF28,-9pMuSNlN6A";
-  //iframe.src ="https://www.youtube.com/embed/6TeZjzc_WWw?si=oMY0NRd4c9IH60u4"
-  //      +"&mute=1&autoplay=1&controls=0&loop=1&cc_load_policy=0";
+  iframe.src="https://www.youtube.com/embed/Vsw3cQE1aks?mute=1&autoplay=1&loop=1&playlist=Vsw3cQE1aks";
   
   // CSSオブジェクトの生成
   const cssObject = new CSS3DObject(iframe);
